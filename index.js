@@ -1,15 +1,14 @@
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
+const PORT = process.env.PORT || 3000;
 
-const app = express();
 
-//fix this
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
-});
+var app = express();
+  app.use(express.static(path.join(__dirname, 'public')))
+  app.set('views', path.join(__dirname, 'views'))
+  app.set('view engine', 'ejs')
+  app.get('/', (req, res) => res.render('pages/index'))
+  app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
-app.use(express.static('static'))
-app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
-
-app.listen(3000, () => console.log('app running on port 3000'))
+  app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
