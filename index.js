@@ -3,7 +3,14 @@ const path = require('path');
 const favicon = require('serve-favicon');
 const PORT = process.env.PORT || 3000;
 
+var passport = require('passport');
+var util = require('util');
+var InstagramStrategy = require('passport-instagram').Strategy;
 
+var INSTAGRAM_CLIENT_ID = process.env.INSTAGRAM_CLIENT_ID;
+var INSTAGRAM_CLIENT_SECRET = process.env.INSTAGRAM_CLIENT_SECRET;
+
+require('dotenv').config();
 var app = express();
   app.use(express.static(path.join(__dirname, 'public')))
   app.set('views', path.join(__dirname, 'views'))
