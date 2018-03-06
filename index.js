@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 
 var passport = require('passport');
 var util = require('util');
@@ -15,7 +15,7 @@ var app = express();
   app.use(express.static(path.join(__dirname, 'public')))
   app.set('views', path.join(__dirname, 'views'))
   app.set('view engine', 'ejs');
-  app.get('/', (req, res) => res.render('pages/index.ejs'));
+  app.get('/', (req, res) => res.render('index'));
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
   app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
