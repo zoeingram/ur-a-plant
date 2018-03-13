@@ -1,0 +1,25 @@
+* {
+  font-family: monospace;
+  font-weight: 300;
+}
+
+#startModal {
+  display: none;
+}
+
+.ui-dialog {
+  border: 1px solid black;
+  padding: 3%;
+}
+
+#title {
+  text-align: center;
+}
+
+#progress{
+  height: 300px;
+}
+
+.center {
+  text-align: center;
+}

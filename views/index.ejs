@@ -2,19 +2,42 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>ur a plant</title>
-    <link rel="/stylesheets/Skeleton/css/normalize.css"/>
-    <link rel="/stylesheets/Skeleton/css/skeleton.css"/>
-    <link rel="/stylesheets/main.css"/>
+    <link rel="stylesheet" href="/stylesheets/Skeleton/css/normalize.css"/>
+    <link rel="stylesheet" href="/stylesheets/Skeleton/css/skeleton.css"/>
+    <link rel="stylesheet" href="/stylesheets/main.css"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+    <script src="/scripts/progressbar/dist/progressbar.js"></script>
+
 
   </head>
+
   <body>
     <div class="container">
       <div class="row">
+        <div class="twelve columns" id="title">
+          <h1>plant</h1>
+        </div>
+        <div id="startModal">
+          <h1>ur a plant!</h1>
+          <p>Take a selfie! Using our machine learning algorithms and data processing, we will analyze what percentage of a plant you are.</p>
+        </div>
+      </div>
 
+      <div class="row">
+      <form action="/upload" class="twelve columns center" method="POST">
+        <div id="space">
+            <input id="file" type="file" accept="image/*;capture=camera">
+        </div>
+      </form>
+      <div class="progress" id="progress"></div>
 
       </div>
+
+
+
     </div>
     <script src="/scripts/main.js"></script>
   </body>

@@ -16,6 +16,8 @@ var app = express();
   app.set('views', path.join(__dirname, 'views'))
   app.set('view engine', 'ejs');
   app.get('/', (req, res) => res.render('index'));
+
+  app.post('/upload', (req, res) => res.render('image'))
   app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
 
   app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
